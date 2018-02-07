@@ -1,33 +1,3 @@
-window.jQuery = window.$;
-
-$.ajax({
-  url:'http://localhost:8000/serve.php',
-  method:'get',
-  success:function(data) {
-    var total_duration = animate(data);
-
-    generate_graph(
-      '#acceleration_chart',
-      'time',
-      'acceleration', 
-      format_data_set(data[0], data[1], 'acceleration', '#ff7f0e'),
-      total_duration
-    );
-
-    generate_graph(
-      '#velocity_chart',
-      'time',
-      'velocity', 
-      format_data_set(data[0], data[2], 'velocity', '#ff7f0e'),
-      total_duration
-    );
-
-  },
-  error:function(data){
-    alert("error");
-  }
-});
-
 function animate(data){
   leader_pos = data[3].slice();
   follower_pos = data[6].slice();
@@ -37,11 +7,14 @@ function animate(data){
 
   
   var canvas_width = Math.max.apply(null, leader_pos) + 50;
-  var canvas_height = 50;
+  var canvas_height = 20;
   $("#canvas").attr('width',canvas_width*size_scaler);
   $(".chart").attr('width',canvas_width*size_scaler);
   $("#canvas").attr('height',canvas_height*size_scaler);
-  
+  $("#time-line").css('height', ($("#charts").height() - 50).toString() + 'px'); 
+  $("#time-line").css('top', ($("#canvas").height() + 25).toString() + 'px'); 
+
+
 
   var leader_translations = [];
   var follower_translations = [];
@@ -51,6 +24,8 @@ function animate(data){
   }
   leader_translations[0].transition_duration = 0;
   follower_translations[0].transition_duration = 0;
+
+  var total_duration = transition_duration * leader_translations.length;
 
   var length = 4;
   var width = 2
@@ -64,30 +39,28 @@ function animate(data){
                 .attr({ fill: '#3ccb3e' })
                 // .attr({x: follower_translations[0].value })
   
-  anime({
+  animated_elements.push(anime({
     targets: '#leader',
     translateX: leader_translations,
     easing: 'linear',
     autoplay: false
-  });
+  }));
 
-  anime({
+  animated_elements.push(anime({
     targets: '#follower',
     translateX: follower_translations,
     easing: 'linear',
     autoplay: false
-  });
+  }));
 
-  // anime({
-  //   target: '#buffer',
-  //   translateX: leader_translations.map(function (val){
-  //     val.value = val.value + (width*size_scaler);
-  //     return val;
-  //   }),
-  //   autoplay: false
-  // })
+  animated_elements.push(anime({
+    targets: '#follower',
+    translateX: follower_translations,
+    easing: 'linear',
+    autoplay: false
+  }));
 
-  return transition_duration * leader_translations.length;
+  return total_duration;
 
   // anime({
   //   targets: '#m10',
@@ -98,4 +71,23 @@ function animate(data){
   //   easing: 'linear'
   // });
 
+}
+
+function set_playback_handlers()
+{
+  document.querySelector('#playPause .play').onclick = function() { 
+    for (var i = 0; i < animated_elements.length; i++) {
+      animated_elements[i].play();
+    }
+  };
+  document.querySelector('#playPause .pause').onclick = function() {
+    for (var i = 0; i < animated_elements.length; i++) {
+      animated_elements[i].pause();
+    }
+  }
+   document.querySelector('#playPause .restart').onclick = function() {
+    for (var i = 0; i < animated_elements.length; i++) {
+      animated_elements[i].restart();
+    }
+  }
 }

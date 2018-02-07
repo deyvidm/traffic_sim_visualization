@@ -11,15 +11,26 @@
   <script src="dep/anime.min.js"></script>
 </head>
 <body>
-    <svg id="canvas" width="1440">
-        <rect  id="leader" width="25" height="25"" x="20" y="40" fill="white"/>
-        <rect id="follower" width="25" height="25"" x="20" y="40" fill="white"/>
-        <rect id="buffer" width="25" height="25"" x="20" y="40" fill="white"/>
-    </svg>
-    <svg id="acceleration_chart" class=".chart" width="1440"></svg> 
-    <svg id="velocity_chart" class=".chart" width="1440"></svg> 
+    <div id="playPause">
+        <svg id="canvas" width="1440">
+            <rect  id="leader" width="25" height="25"" x="20" y="40" fill="white"/>
+            <rect id="follower" width="25" height="25"" x="20" y="40" fill="white"/>
+            <!-- <rect id="time-line" width="3" height="500"" x="20" y="40" fill="blue"/> -->
+        </svg>
+        <div id="time-line"></div>  
+        <div id="charts">
+            <svg id="acceleration_chart" class=".chart" width="1440"></svg> 
+            <svg id="velocity_chart" class=".chart" width="1440"></svg> 
+        </div>
 
+        <div class="line player"> 
+            <button class="play">Play</button> 
+            <button class="pause">Pause</button> 
+            <button class="restart">Restart</button>
+        </div>
 </body>
+
 <script src="chart.js"></script>
 <script src="animate.js"></script>
+<script src="bundle.js"></script>
 </html>

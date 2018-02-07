@@ -8,3 +8,11 @@
 .acceleration_chart-colour {
     background-color: lightblue;
 }
+
+#time-line
+{
+    background: lightblue;
+    width: 3px;
+    position: absolute;
+    left: 107px;
+}
