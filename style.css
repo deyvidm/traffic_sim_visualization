@@ -1,0 +1,10 @@
+.follower-cube {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: lightblue;
+}
+
+.acceleration_chart-colour {
+    background-color: lightblue;
+}
