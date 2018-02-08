@@ -57,35 +57,6 @@ function follow(elem_selector, total_duration)
     duration: total_duration,
     autoplay: false
   }));
-
-  // // add the follower cube to the DOM 
-  // $(elem_selector).after($('<div class="follower-cube"></div>'));
-
-  // var cube_selector = elem_selector + " + .follower-cube";
-  // var path_selector = elem_selector + '> g > g > g.nv-linesWrap.nvd3-svg > g > g > g.nv-groups > g > path';
-
-  // // position the follower cube on top of its path
-  // path_position = get_start_of_path(elem_selector, path_selector);
-  
-  // var top = $(elem_selector).offset().top + path_position.y - $(cube_selector).height()/2;
-  // var left = $(elem_selector).offset().left + path_position.x - $(cube_selector).width()/2;
-
-  // $(cube_selector)
-  //           .css('top', top.toString()+'px')
-  //           .css('left', left.toString()+'px');
-
-  // // let em loose!  
-  // var path = anime.path(path_selector);
-
-  // animated_elements.push(anime({
-  //   targets: cube_selector,
-  //   translateX: path('x'),
-  //   translateY: path('y'),
-  //   rotate: path('angle'),
-  //   easing: 'linear',
-  //   duration: total_duration,
-  //   autoplay: false
-  // }));
 }
 
 function get_start_of_path(path_container_selector, path_selector)

@@ -18,7 +18,7 @@ function animate(data){
 
   var leader_translations = [];
   var follower_translations = [];
-  for (var i = 0; i < follower_pos.length; i++) {  
+  for (var i = 1; i < follower_pos.length; i++) {  
     leader_translations.push({value: leader_pos[i]*size_scaler, duration: transition_duration});
     follower_translations.push({value: follower_pos[i]*size_scaler, duration: transition_duration});
   }
@@ -31,14 +31,16 @@ function animate(data){
   var width = 2
   $("#leader").attr('width',length*size_scaler) // object.width = car.length * size_scaler
               .attr('height',width*size_scaler)
-              .attr({ fill: '#f74246' })
-              // .attr({x: leader_translations[0].value })
+              .attr('fill','#f74246')
+              
 
   $("#follower").attr('width',length*size_scaler) // object.width = car.length * size_scaler
                 .attr('height',width*size_scaler)
-                .attr({ fill: '#3ccb3e' })
-                // .attr({x: follower_translations[0].value })
+                .attr('fill', '#3ccb3e')
+                
   
+
+
   animated_elements.push(anime({
     targets: '#leader',
     translateX: leader_translations,
@@ -61,15 +63,6 @@ function animate(data){
   }));
 
   return total_duration;
-
-  // anime({
-  //   targets: '#m10',
-  //   translateX: leader_translations.map(function (val){
-  //     val.value = val.value -(10*size_scaler);
-  //     return val;
-  //   }),
-  //   easing: 'linear'
-  // });
 
 }
 

@@ -24,6 +24,20 @@ $.ajax({
       total_duration
     );
 
+    generate_graph(
+      '#position_chart',
+      'time',
+      'difference in position', 
+      format_data_set(
+        data[0], 
+        data[3].map(function(item, index) {
+          return item - data[6][index];}), 
+        'difference in position', 
+        '#f74246'
+      ),
+      total_duration
+    );
+
   },
   error:function(data){
     alert("error");
