@@ -40,7 +40,7 @@ $.ajax({
 
   },
   error:function(data){
-    alert("error");
+    alert("😬");
   }
 });
 
