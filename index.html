@@ -3,8 +3,8 @@
 <meta charset="utf-8">
 <head>
   <title>Visualization v5</title>
-  <link rel="stylesheet" type="text/css" href="nv.d3.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/nv.d3.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="dep/jquery-3.3.1.min.js"></script>
   <script src="dep/d3.min.v3.js"></script>
   <script src="dep/nv.d3.min.js"></script>
@@ -13,8 +13,10 @@
 <body>
     <div id="playPause">
         <svg id="canvas" width="1440">
-            <rect  id="leader" width="25" height="25"" x="20" y="40" fill="white"/>
-            <rect id="follower" width="25" height="25"" x="20" y="40" fill="white"/>
+            <rect  class="car leader" id="leader" width="25" height="25"" x="20" y="40" fill="#f74246"/>
+            <rect  class="car follower" id="follower" width="25" height="25"" x="20" y="40" fill="#3ccb3e"/>
+            <rect  class="car follower" width="25" height="25"" x="20" y="40" fill="blue"/>
+
             <!-- <rect id="time-line" width="3" height="500"" x="20" y="40" fill="blue"/> -->
         </svg>
         <div id="time-line"></div>  
@@ -31,7 +33,7 @@
         </div>
 </body>
 
-<script src="chart.js"></script>
-<script src="animate.js"></script>
-<script src="bundle.js"></script>
+<script src="scripts/chart.js"></script>
+<script src="scripts/animate.js"></script>
+<script src="scripts/bundle.js"></script>
 </html>

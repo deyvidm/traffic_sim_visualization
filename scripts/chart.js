@@ -6,7 +6,7 @@ function generate_graph(elem_selector, x_axis_label, y_axis_label, data, total_d
                   .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
                   .showYAxis(true)        //Show the y-axis
                   .showXAxis(true)        //Show the x-axis
-    ;
+    
 
     chart.xAxis
         .axisLabel(x_axis_label)
@@ -38,12 +38,11 @@ function format_data_set(x_vals, y_vals, key, colour) {
     values.push({x: x_vals[i], y: y_vals[i]});
   }
 
-  return [
-  {
+  return {
     values: values,
     key: key,
     color: colour // THERE IS ONLY ONE RIGHT SPELLING, AND IT USES 'u'
-  }]
+  }
 }
 
 function follow(elem_selector, total_duration)
