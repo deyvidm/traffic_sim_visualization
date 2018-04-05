@@ -14,8 +14,10 @@
     <div id="playPause">
         <svg id="canvas" width="1440">
             <rect  class="car leader" id="leader" width="25" height="25"" x="20" y="40" fill="#f74246"/>
+            <rect  class="car leader" width="25" height="25"" x="20" y="40" fill="blue"/>
             <rect  class="car follower" id="follower" width="25" height="25"" x="20" y="40" fill="#3ccb3e"/>
             <rect  class="car follower" width="25" height="25"" x="20" y="40" fill="blue"/>
+
 
             <!-- <rect id="time-line" width="3" height="500"" x="20" y="40" fill="blue"/> -->
         </svg>
@@ -26,11 +28,12 @@
             <svg id="position_chart" class=".chart" width="1440"></svg> 
         </div>
 
-        <div class="line player"> 
-            <button class="play">Play</button> 
-            <button class="pause">Pause</button> 
-            <button class="restart">Restart</button>
+        <div class="line player align-items"> 
+          <button class="play">Play</button>
+          <button class="pause">Pause</button>
+          <button class="restart">Restart</button>
         </div>
+
 </body>
 
 <script src="scripts/chart.js"></script>

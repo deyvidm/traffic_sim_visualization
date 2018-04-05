@@ -22,17 +22,17 @@ $.ajax({
     success:function(data) {
         var total_duration = animate(data);
 
-        generate_graph(
-            '#acceleration_chart',
-            'time',
-            'acceleration', 
-            [
-                format_data_set(data.time, data.leader.acc, 's1', '#f74246'),
-                format_data_set(data.time, data.follower.acc, 's2', 'green'),
-                // format_data_set(data.time, data.follower_2.acc, 's3', 'blue')
-            ],
-            total_duration
-        );
+        // generate_graph(
+        //     '#acceleration_chart',
+        //     'time',
+        //     'acceleration', 
+        //     [
+        //         format_data_set(data.time, data.leader.acc, 's1', '#f74246'),
+        //         format_data_set(data.time, data.follower.acc, 's2', 'green'),
+        //         // format_data_set(data.time, data.follower_2.acc, 's3', 'blue')
+        //     ],
+        //     total_duration
+        // );
 
         //  generate_graph(
         //   '#acceleration_chart',
@@ -46,17 +46,17 @@ $.ajax({
         // );
 
 
-        generate_graph(
-            '#velocity_chart',
-            'time',
-            'velocity', 
-            [
-                format_data_set(data.time, data.leader.speed, 's1', '#f74246'),
-                format_data_set(data.time, data.follower.speed, 's2', 'green'),
-                // format_data_set(data.time, data.follower_2.speed, 's3', 'blue')
-            ],
-            total_duration
-        );
+        // generate_graph(
+        //     '#velocity_chart',
+        //     'time',
+        //     'velocity', 
+        //     [
+        //         format_data_set(data.time, data.leader.speed, 's1', '#f74246'),
+        //         format_data_set(data.time, data.follower.speed, 's2', 'green'),
+        //         // format_data_set(data.time, data.follower_2.speed, 's3', 'blue')
+        //     ],
+        //     total_duration
+        // );
 
         // generate_graph(
         //     '#velocity_chart',
@@ -70,24 +70,24 @@ $.ajax({
         // );
         
 
-        var diff_in_pos = data.leader.pos.map(function(item, index) {
-          // In this case item correspond to currentValue of array a, 
-          // using index to get value from array b
-          return item - data.follower.pos[index];
-        })
+        // var diff_in_pos = data.leader.pos.map(function(item, index) {
+        //   // In this case item correspond to currentValue of array a, 
+        //   // using index to get value from array b
+        //   return item - data.follower.pos[index];
+        // })
 
-        generate_graph(
-            '#position_chart',
-            'time',
-            'position', 
-            [
-                format_data_set(data.time, diff_in_pos, 's1', '#f74246'),
-                // format_data_set(data.time, data.leader.pos, 's1', '#f74246'),
-                // format_data_set(data.time, data.follower.pos, 's2', 'green'),
-                // format_data_set(data.time, data.follower_2.pos, 's3', 'blue')
-            ],
-            total_duration
-        );
+        // generate_graph(
+        //     '#position_chart',
+        //     'time',
+        //     'position', 
+        //     [
+        //         format_data_set(data.time, diff_in_pos, 's1', '#f74246'),
+        //         // format_data_set(data.time, data.leader.pos, 's1', '#f74246'),
+        //         // format_data_set(data.time, data.follower.pos, 's2', 'green'),
+        //         // format_data_set(data.time, data.follower_2.pos, 's3', 'blue')
+        //     ],
+        //     total_duration
+        // );
 
         // generate_graph(
         //     '#position_chart',
