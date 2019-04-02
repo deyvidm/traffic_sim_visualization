@@ -21,6 +21,17 @@ This is a visualization suite built for my research project, a multilane highway
 
 It moves colourful rectangles (cars) according to a set of X and Y values over T time segments. 
 
-Most of my efforts during the semester went toward the simulation because it was the focus of my research, and the only component to receive grading. The visualizer was created in my spare time to help illustrate my progress and changes to my supervisor as we worked through the semester. 
+Most of my efforts during the semester were directed toward developing the model as it was the focus of my research, and the bulk of content for grading. The visualizer was created in my spare time to help illustrate how the model behaved and served as an infromative visual aid during my final presentation. 
 
-The final product tremendously helped illustrate my semester's work to my grading committee and peers.
+
+# Examples
+
+- Green car -- the focus of the simulation, and the only vehicle with simulated behaviour
+- Red car -- pre-programmed leader car that Green follows while in its lane
+- Blue car -- additional pre-programmed "actors" the Green car must interact with, should it wish to change lanes
+
+### Standard
+
+![Image of Yaktocat](/README_images/standard.gif)
+
+
